@@ -1,22 +1,14 @@
-import React from 'react';
+export const Meeting = ({changeName}) => {
 
-export class Body extends React.Component {
-state = {
-    name: ''
-}
+    const handelChange = (ev) => {
+        changeName(ev.target.value)
+    }
 
-handelChange = (ev) => {
-    this.setState({name: ev.target.value})
-    console.log(ev.target.value)
-}
-
-render (){
-    return <div className='body'>
-                <div className='app-body'>
-                    <p>So, meeting! What is your name</p>
-                    <input type='text' onChange={this.handelChange}/>
+        return <div className='body'>
+                    <div className='app-body'>
+                        <p>So, meeting! What is your name</p>
+                        <input type='text' onChange={handelChange}/>
+                    </div>
                 </div>
-            </div>
-}
-}
 
+}
